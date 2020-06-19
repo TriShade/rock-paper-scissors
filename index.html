@@ -1,162 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="UTF-8"/>
 </head>
 <body>
-  <script>
-
-    // Computer chooses what to use
-    function computerPlay() {
-        // Random number between 1 and 3    
-        let choice = Math.floor((Math.random() * 3) + 1);
-        switch (choice) {
-            case 1:
-                return "rock";
-                break;
-            case 2:
-                return "paper";
-                break;
-            case 3:
-                return "scissors"
-                break;
-        }
-    }
-    // Player chooses what to use
-    function playerPlay() {
-      let playerSelection = prompt("Rock, paper, or scissors?");
-      playerSelection = playerSelection.toLowerCase();
-      return playerSelection;
-    }
-    // Plays a round
-    function playRound() {
-      let playerChoice = playerPlay();
-      let computerChoice = computerPlay();
-    //  const WIN = `Wow, ${playerChoice} beats ${computerChoice}! You win!`; ---> 1
-      //const LOSE = `Ouch, ${computerChoice} beats ${playerChoice}! You lose!`; ---> 0
-      //const TIE = `You both chose ${playerChoice}! It's a tie!` ---> 2
-      switch (playerChoice) {
-        case computerChoice:
-          return 2;
-          break;
-        case "rock":
-          return (computerChoice === "paper") ? 0 : 1;
-          break;
-        case "paper":
-          return (computerChoice === "scissors") ? 0 : 1;
-          break;
-        case "scissors":
-          return (computerChoice === "rock") ? 0 : 1;
-          break;
-      }
-    }
-
-
-
-    function game() {
-      let roundCount = 0;
-      let playerScore = 0;
-      let computerScore = 0;
-      //round 1
-      let roundResult = playRound();
-      roundCount++;
-      switch (roundResult) {
-        case 1:
-          ++playerScore;
-          console.log(`You win!`);
-          break;
-        case 0:
-          ++computerScore;
-          console.log(`You lose!`);
-          break;
-        default:
-          console.log(`It's a tie!`);
-          break;
-      }
-      console.log(`Round ${roundCount} complete! Player: ${playerScore}! Computer: ${computerScore}!`);
-
-      // replace with loop later
-      //round 2
-      roundResult = playRound();
-      roundCount++;
-      switch (roundResult) {
-        case 1:
-          ++playerScore;
-          console.log(`You win!`);
-          break;
-        case 0:
-          ++computerScore;
-          console.log(`You lose!`);
-          break;
-        default:
-          console.log(`It's a tie!`);
-          break;
-      }
-      console.log(`Round ${roundCount} complete! Player: ${playerScore}! Computer: ${computerScore}!`);
-      //round 3
-      roundResult = playRound();
-      roundCount++;
-      switch (roundResult) {
-        case 1:
-          ++playerScore;
-          console.log(`You win!`);
-          break;
-        case 0:
-          ++computerScore;
-          console.log(`You lose!`);
-          break;
-        default:
-          console.log(`It's a tie!`);
-          break;
-      }
-      console.log(`Round ${roundCount} complete! Player: ${playerScore}! Computer: ${computerScore}!`);
-      //round 4
-      roundResult = playRound();
-      roundCount++;
-      switch (roundResult) {
-        case 1:
-          ++playerScore;
-          console.log(`You win!`);
-          break;
-        case 0:
-          ++computerScore;
-          console.log(`You lose!`);
-          break;
-        default:
-          console.log(`It's a tie!`);
-          break;
-      }
-      console.log(`Round ${roundCount} complete! Player: ${playerScore}! Computer: ${computerScore}!`);
-      //round 5
-      roundResult = playRound();
-      roundCount++;
-      switch (roundResult) {
-        case 1:
-          ++playerScore;
-          console.log(`You win!`);
-          break;
-        case 0:
-          ++computerScore;
-          console.log(`You lose!`);
-          break;
-        default:
-          console.log(`It's a tie!`);
-          break;
-      }
-      console.log(`Round ${roundCount} complete! Player: ${playerScore}! Computer: ${computerScore}!`);
-      //who won the whole game?
-      if (playerScore > computerScore) {
-        console.log(`Wow you win by a whopping ${playerScore - computerScore} point(s)!`)
-      }
-      else if (playerScore < computerScore) {
-        console.log(`Ouch, at least you only lost by ${computerScore - playerScore} point(s)...`)
-      }
-      else {
-        console.log(`You both got ${playerScore} point(s)! How anticlimactic.`)
-      }
-    }
-
-  </script>
+  <div id="top">
+    <h1>Rock Paper Scissors</h1>
+    <div id="gamelog">
+      <p id="logcontent">A simple game of rock paper scissors. Click the buttons below to make your choice. First to 5 points wins!</p>
+    </div>
+    <div id="choicebuttons">
+      <button id="rock" class="choice">Rock</button>
+      <button id="paper" class="choice">Paper</button>
+      <button id="scissors" class="choice">Scissors</button>
+    </div>
+  </div>
+  <div id="player">
+    <h2>Player:</h2>
+    <p id="playerscore">0</p>
+  </div>
+  <div id="computer">
+    <h2>Computer:</h2>
+    <p id="computerscore">0</p>
+  </div>
+  <div id="bottom">
+    <img id="playerhand" src="rockf.png" alt="closed fist before game">
+    <img id="computerhand" src="rock.png" alt="closed fist before game">
+  </div>
 </body>
+<script src="script.js"></script> 
 </html>

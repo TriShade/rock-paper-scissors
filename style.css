@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+html {
+    background-color: #f9c74f;
+    background-image: linear-gradient(#f9c74f, #43AA8B);
+    font-family: 'Raleway', sans-serif;
+    color: #394D5E;
+}
+
+#top {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+    border: 2px solid #2D3C4A;
+}
+
+button {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #2D3C4A;
+}
+
+#rock {
+    background-color: #577590;
+}
+
+#paper {
+    background-color: #90be6d;
+}
+
+#scissors {
+    background-color: #f94144;
+}
+
+#player, #computer {
+    background-color: white;
+    position: fixed;
+    top: 50px;
+    border: 2px solid #2D3C4A;
+    text-align: center;
+    font-size: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+#player {
+    left: 50px;
+}
+
+#computer {
+    right: 50px;
+}
+
+#playerscore, #computerscore {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+
+img {
+    height: auto;
+    width: 40%;
+}
+
+@keyframes play {
+    0%   {bottom: 50px;}
+    50%  {bottom: 200px;}
+    100% {bottom: 50px;}
+  }
+
+#computerhand {
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+}
+
+#playerhand {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+}
+
+.animated {
+    animation: play 1s infinite;
+    animation-iteration-count: 5;
+}
